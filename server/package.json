@@ -1,20 +1,29 @@
 {
-  "name": "server",
+  "name": "pikachoo-server",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "the server side of pikachoo",
+  "main": "dist/index.js",
   "scripts": {
-    "start": "nodemon src/index.ts"
+    "start": "node dist/index.js",
+    "dev": "nodemon dist/index.js",
+    "build": "tsc build",
+    "watch": "tsc -w"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "author": "Pikachoo Team",
+  "license": "MIT",
   "dependencies": {
-    "express": "^4.17.1"
+    "@types/socket.io": "^3.0.2",
+    "express": "^4.17.1",
+    "http": "^0.0.1-security",
+    "socket.io": "^4.2.0"
   },
   "devDependencies": {
     "@types/express": "^4.17.13",
     "@types/node": "^16.7.10",
+    "@typescript-eslint/eslint-plugin": "^4.30.0",
+    "@typescript-eslint/parser": "^4.30.0",
+    "eslint": "^7.32.0",
+    "husky": "^7.0.2",
     "nodemon": "^2.0.12",
     "ts-node": "^10.2.1",
     "typescript": "^4.4.2"
