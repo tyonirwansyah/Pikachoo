@@ -1,18 +1,9 @@
-import express, { Application, Request, Response } from 'express';
-import { Server } from 'socket.io';
+import express, { Express } from 'express';
+import serverConnnection from './setup/server';
+import socketConnection from './setup/socket';
 
-const app: Application = express();
-const PORT = 5000 || process.env.PORT;
-const expressServer = app.listen(PORT, () => {
-  console.log(`Server running on PORT ${PORT}`);
-});
-const io = new Server(expressServer);
+const app: Express = express();
 
-app.get('/', (req: Request, res: Response) => {
-  res.send('Hello');
-});
+serverConnnection(app);
 
-io.on('connection', (socket: any) => {
-  // this message can be logged once we connect to the client-side
-  console.log(`User connected with id ${socket.id}`);
-});
+socketConnection(app);
