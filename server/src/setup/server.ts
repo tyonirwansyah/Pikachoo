@@ -1,7 +1,7 @@
 import { Express } from 'express';
 import { SERVER_PORT } from '../config/env';
 
-export default function serverConnnection(server: Express) {
+export default function serverConnnection(server: Express): void {
   console.log('[SETUP] - Starting server...');
 
   const serverProcess = server.listen(SERVER_PORT, () => {

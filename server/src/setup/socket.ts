@@ -2,7 +2,7 @@ import { Server as SocketServer } from 'socket.io';
 import { Express } from 'express';
 import { createServer, Server } from 'http';
 
-export default function socketConnection(server: Express) {
+export default function socketConnection(server: Express): void {
   const app: Server = createServer(server);
   const io: SocketServer = new SocketServer(app);
 
