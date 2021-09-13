@@ -16,7 +16,7 @@ class Group {
   public owner?: UserSchema;
 
   @prop({ required: true, type: [UserSchema], default: [] })
-  public users?: UserSchema[];
+  public members?: UserSchema[];
 }
 
 const GroupModel = getModelForClass(Group);
